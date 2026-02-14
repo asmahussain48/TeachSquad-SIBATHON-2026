@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your Wishlist</h2>
+
+<div class="grid">
+  {% for p in products %}
+  <div class="card">
+    <img class="thumb" src="/static/img/{{ p.image }}">
+    <div class="card-body">
+      <div class="name">{{ p.name }}</div>
+      <div class="muted">{{ p.brand }}</div>
+      <div class="price">Rs {{ p.price }}</div>
+
+      <div class="actions">
+        <a class="btn tiny" href="/product/{{p.id}}">View</a>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p>No items saved</p>
+  {% endfor %}
+</div>
+{% endblock %}
