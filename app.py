@@ -407,7 +407,12 @@ def login():
         return redirect(url_for("home"))
 
     return redirect(url_for("login"))
-
+# ===================== LOGOUT =====================
+@app.route("/logout")
+def logout():
+    session.clear()          # removes user session
+    flash("You have been logged out")
+    return redirect(url_for("login"))
 
 # ===================== CART PAGES =====================
 @app.route("/cart")
