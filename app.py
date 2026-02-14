@@ -307,26 +307,31 @@ def add_review(product_id):
 
 
 # ===================== WISHLIST API + PAGE =====================
-@app.route("/api/wishlist/toggle", methods=["POST"])
-def toggle_wishlist():
-    user = current_user()
-    if not user:
-        return jsonify({"ok": False, "error": "login_required"}), 401
+@app.route("/toggle_wishlist/<int:pid>")
+def toggle_wishlist(pid):
+    user_id = session.get("user_id")
+    if not user_id:
+        return "login"
 
-    data = request.get_json(force=True)
-    pid = int(data.get("product_id"))
+    with open(WISHLIST_FILE, "r") as f:
+        wishlist = json.load(f)
 
-    wishlist = get_wishlist(user["id"])
+    uid = str(user_id)
+    if uid not in wishlist:
+        wishlist[uid] = []
 
-    if pid in wishlist:
-        wishlist.remove(pid)
-        state = False
+    if pid in wishlist[uid]:
+        wishlist[uid].remove(pid)
+        message = "removed"
     else:
-        wishlist.append(pid)
-        state = True
+        wishlist[uid].append(pid)
+        message = "added"
 
-    save_wishlist(user["id"], wishlist)
-    return jsonify({"ok": True, "wishlisted": state})
+    with open(WISHLIST_FILE, "w") as f:
+        json.dump(wishlist, f, indent=2)
+
+    return jsonify({"status": message})
+
 
 
 @app.route("/wishlist")
@@ -337,7 +342,7 @@ def wishlist_page():
 
     ids = get_wishlist(user["id"])
     products = [p for p in get_products() if p["id"] in ids]
-    return render_template("wishlist.html", products=products)
+    return render_template("wishllist.html", products=products)
 
 
 # ===================== LOGIN / REGISTER =====================
