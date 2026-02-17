@@ -8,8 +8,7 @@ Traditional online stores only display products and wait for customers to search
 **CartIQ** is an AI-powered mobile phone e-commerce website that adapts the store for every customer.  
 The system learns from searches, views, purchases, and reviews, then recommends relevant products and improves the shopping experience.
 
-Instead of a simple store, it works as a smart business support system that helps customers find phones faster and helps sellers make better decisions.
-
+Instead of a simple store, it works as a smart business support system that helps customers find phones faster and
 ---
 
 ## Features

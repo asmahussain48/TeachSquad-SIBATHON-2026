@@ -414,6 +414,7 @@ def logout():
     flash("You have been logged out")
     return redirect(url_for("login"))
 
+
 # ===================== CART PAGES =====================
 @app.route("/cart")
 def cart():
