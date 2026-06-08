@@ -1,47 +1,70 @@
-# TeachSquad-SIBATHON-2026
-AI based Ecommerce Store 
-# 📱 CartIQ — AI Mobile Store E-Commerce
+# 🛒 CartIQ — AI-Powered Mobile E-Commerce Store
 
-## Description
-Traditional online stores only display products and wait for customers to search. They do not understand user behavior, which leads to low engagement and unsold inventory.
+An intelligent e-commerce web application built for **SIBATHON 2026** that uses AI and machine learning to personalize the shopping experience for every user.
 
-**CartIQ** is an AI-powered mobile phone e-commerce website that adapts the store for every customer.  
-The system learns from searches, views, purchases, and reviews, then recommends relevant products and improves the shopping experience.
+## 📖 About the Project
+Traditional online stores only display products and wait for customers to search. CartIQ solves this by learning from user behavior — searches, views, purchases, and reviews — to deliver personalized recommendations and smart business insights.
 
-Instead of a simple store, it works as a smart business support system that helps customers find phones faster and
----
+Built by a 2-person team as part of SIBATHON 2026 at Sukkur IBA University.
 
-## Features
-- AI product recommendations
-- Personalized homepage
-- Smart search
-- Review sentiment analysis
-- Trending product detection
-- Demand prediction
+## 👩‍💻 Team
+| Name | Role |
+|---|---|
+| Mahma Rani | AI/ML & Data |
+| Asma Hussain | Frontend & Backend |
 
----
+## 🛠️ Tech Stack
+| Layer | Technology |
+|---|---|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Python (Flask) |
+| AI/ML | Python Machine Learning |
+| Storage | JSON File Handling |
 
-## Technologies
-Frontend: HTML, CSS, JavaScript  
-Backend: Python (Flask)  
-AI: Python Machine Learning  
-Storage: File Handling using JSON files
+## 🧠 AI/ML Features
+- **Product Recommendations** — Personalized suggestions based on user behavior
+- **Review Sentiment Analysis** — Analyzes customer reviews to detect positive/negative feedback
+- **Trending Product Detection** — Identifies currently popular products
+- **Demand Prediction** — Forecasts product demand using historical data
+- **Personalized Homepage** — Adapts store layout per user preferences
+- **Smart Search** — Intelligent search that understands user intent
 
----
+## 📂 Data Structure
+data/
+├── users.json       # User profiles and behavior
+├── products.json    # Product catalog
+├── orders.json      # Order history
+├── reviews.json     # Customer reviews
+└── activity.json    # User activity logs
+## ⚙️ How It Works
+User activity → stored in JSON files → AI analyzes behavior → personalized products shown
+## 🗂️ Project Structure
+CartIQ/
+├── ai/              # Machine learning models and logic
+├── data/            # JSON data files
+├── static/          # CSS, JS, images
+├── templates/       # HTML pages
+├── app.py           # Flask application entry point
+└── README.md
 
-## Data Files
-- `users.json`
-- `products.json`
-- `orders.json`
-- `reviews.json`
-- `activity.json`
+## ⚙️ Getting Started
+### Prerequisites
+- Python 3.x
+- Flask
+- Required Python ML libraries
 
----
+### Setup
+1. Clone the repository
+git clone https://github.com/mahmarani/TeachSquad-SIBATHON-2026.git
+2. Install dependencies
+pip install flask
+3. Run the application
+python app.py
+4. Open browser at `http://localhost:5000`
 
-## Workflow
-User activity → stored in files → AI analyzes behavior → personalized products shown
-
----
-
-## Goal
+## 🎯 Goal
 To demonstrate how AI can transform a simple mobile store into an intelligent business decision support system.
+
+## 📄 License
+This project is open source and available under the MIT License.
+
